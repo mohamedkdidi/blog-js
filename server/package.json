@@ -1,0 +1,16 @@
+{
+  "name": "blogjs",
+  "version": "1.0.0",
+  "description": "Simple blog with Angular 6, NodeJs, Express, MongoDB",
+  "main": "app.js",
+  "author": "Mohamed Kdidi",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/cli": "^1.7.4",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.13",
+    "serve-favicon": "^2.5.0"
+  }
+}
