@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+    <a class="navbar-brand" href="#"><img src="assets/img/logo.png" height="50px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Users</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<br/>
+<br/>
+<br/>
+<div class="container-fluid">
+  <div class="card">
+      <div class="card-header">
+          Add post
+      </div>
+      <div class="card-body">
+        <form (submit)="addPost();">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" [(ngModel)]="title" class="form-control" id="title" name="title" placeholder="Post title">
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select class="form-control" id="category" name="category"></select>
+          </div>
+          <div class="form-group">
+            <label for="body">Body</label>
+            <app-ngx-editor name="body" id="body"  [config]="editorConfig" [spellcheck]="true" [(ngModel)]="body"></app-ngx-editor>
+          </div>
+          <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-save"></i> Add post</button>
+        </form>
+      </div>
+    </div>
+  <div class="card">
+    <div class="card-header">
+        Posts List
+    </div>
+    <div class="card-body table-responsive">
+      <table class="table">
+        <tbody>
+          <tr *ngFor="let post of posts">
+            <td (click)="editPost(post, post._id)">{{ post.title }}</td>
+            <td class="post-body">{{ post.body }}</td>
+            <td class="action-edit"><button class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i> Edit</button></td>
+            <td class="action-delete"><button class="btn btn-sm btn-danger" (click)="deletePost(post._id)"><i class="fa fa-trash"></i> Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

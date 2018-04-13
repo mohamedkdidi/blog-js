@@ -1,0 +1,32 @@
+.btn:focus{
+    box-shadow:none;
+}
+.btn-primary, .bg-primary{ background-color: #3dc6bf !important; color:white !important; border-color: #0dada5; }
+.btn-danger, .bg-danger{ background-color: #f37454 !important;  color:white !important; border-color: #e25e3d; }
+.btn-success, .bg-success{ background-color: #7ad41f !important;  color:white !important; border-color: #74cf18 }
+.btn-secondary, .bg-secondary{ background-color: #ee72ae !important;  color:white !important; border-color: #d61f78; }
+
+.post-body{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    max-width:400px;
+}
+
+.card{
+    margin-top: 30px;
+}
+
+.card-body.table-responsive{
+    padding: 0px;
+}
+.card-body.table-responsive td{
+    line-height: 30px
+}
+.action-edit{
+    width: 80px;
+}
+
+.action-delete{
+    width: 80px;
+}
