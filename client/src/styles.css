@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+body.blog-js{
+    font-size: 13px;
+}
+
+.navbar{
+    padding: .01rem 1rem !important;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.navbar-dark .navbar-nav .nav-link{
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.fixed-bottom .navbar-nav .nav-link{
+    font-size: 14px;
+}
+.fixed-bottom .navbar-nav .nav-link a{
+    text-decoration: none;
+    color: #333;
+}
+
+.btn:focus{
+    box-shadow:none;
+}
+
+.blog-js .btn-primary, .blog-js .bg-primary, .blog-js .navbar-dark.bg-primary{ background-color: #3dc6bf !important; color:white !important; border-color: #0dada5; }
+.blog-js .btn-danger, .blog-js .bg-danger{ background-color: #f37454 !important;  color:white !important; border-color: #e25e3d; }
+.blog-js .btn-success, .blog-js .bg-success{ background-color: #7ad41f !important;  color:white !important; border-color: #74cf18 }
+.blog-js .btn-secondary, .blog-js .bg-secondary{ background-color: #ee72ae !important;  color:white !important; border-color: #d61f78; }
+
+.post-body{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    max-width:200px;
+}
+.post-title, .post-body{
+    cursor: pointer;
+}
+.card{
+    margin-top: 30px;
+}
+
+.card-body.table-responsive{
+    padding: 0px;
+}
+.card-body.table-responsive td{
+    line-height: 30px
+}
+.action-edit{
+    width: 80px;
+}
+
+.action-delete{
+    width: 80px;
+}
+
+.toast.toast-success {
+    background-color: #74cf18
+}

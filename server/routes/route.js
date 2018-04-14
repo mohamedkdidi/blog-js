@@ -15,6 +15,7 @@ router.get('/post', (req, res, next) => {
 router.post('/post', (req, res, next) => {
     let newPost = new Post({
         title: req.body.title,
+        category: req.body.category,
         body: req.body.body
     })
 
@@ -34,6 +35,7 @@ router.put('/post/:id', function(req, res){
         if(err) res.send(err);
 
         post.title = req.body.title;
+        category: req.body.category,
         post.body = req.body.body;
 
         post.save(function(err){

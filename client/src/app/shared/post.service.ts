@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
-import { Post } from './post.model';
+import { Http, Response, Headers, RequestOptions, RequestMethod } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+
 import 'rxjs/add/operator/map';
- 
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
+
+import { Post } from './post.model';
+
 @Injectable()
 export class PostService {
 
+  selectedPost : Post;
   constructor(private http: Http) { }
   
   // Post list
@@ -33,4 +39,6 @@ export class PostService {
     return this.http.delete('http://localhost:3000/api/post/'+id)
     .map(res => res.json());
   }
+
+  
 }
