@@ -1,4 +1,4 @@
-# Simple Blog with javaScript technology.
+# Simple Blog with JavaScript full stack development tools.
 
 This application was built with Angular 5, Nodejs, Express, MongoDB and Bootstrap 4.1. 
 
