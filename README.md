@@ -38,7 +38,7 @@ Open client side folder (Angular 5 projet)
 cd client
 ```
 
-Install the Angular 5 project dependency: 
+Install the Angular 5 project dependencies: 
 
 ```
 yarn install
