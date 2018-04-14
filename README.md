@@ -10,6 +10,12 @@ node and yarn
 
 Clone the repository
 
+```
+git clone https://github.com/mohamedkdidi/blog-js.git
+
+cd blog-js
+```
+
 ## Run the server side
 
 Open server side folder 
