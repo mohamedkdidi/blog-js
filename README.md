@@ -16,21 +16,18 @@ Open server side folder
 
 ```
 cd server
-
 ```
 
-Install the Express JS and MongoDB project dependency: 
+Install the Express JS and MongoDB project dependencies: 
 
 ```
 yarn install
-
 ```
 
 Run the project with node commande 
 
 ```
 node app
-
 ```
 
 ## Run the client side
@@ -39,14 +36,12 @@ Open client side folder (Angular 5 projet)
 
 ```
 cd client
-
 ```
 
 Install the Angular 5 project dependency: 
 
 ```
 yarn install
-
 ```
 
 Run the Angular 5 project with Angular CLI commande `ng serve`. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
