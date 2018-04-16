@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body.blog-js{
     font-size: 13px;
+    background: #fbfbfb
 }
 
 .navbar{
@@ -60,4 +61,35 @@ body.blog-js{
 
 .toast.toast-success {
     background-color: #74cf18
+}
+
+
+/* Login */
+
+.login-box {
+    margin:100px auto;
+}
+
+.login-box .logo-name {
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #6c6c6c;
+}
+
+.login-box .user-box {
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+
+.login-box .user-box img {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+.login-box .user-box form {
+    overflow: hidden;
 }

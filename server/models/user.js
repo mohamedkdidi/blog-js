@@ -1,18 +1,44 @@
-var mongoose = require('mongoose'),
-    passportLocalMongoose = require('passport-local-mongoose');
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt-nodejs');
+const Schema = mongoose.Schema;
 
-var User = new mongoose.Schema({
-	email: {
-		type: String, 
-		required: '{PATH} is required!'
-	}
+const UserSchema = new Schema({
+    firstname: {type:String},
+    lastname: {type:String},
+    email: {type:String},
+    username: {type:String},
+    password: {type:String},
+    lastlogin: {type:Date}
 });
 
-// Passport-Local-Mongoose will add a username, 
-// hash and salt field to store the username, 
-// the hashed password and the salt value
+// Pre-save of user's hash password to database
+UserSchema.pre('save', function (next) {
+    var user = this;
+    if (this.isModified('password') || this.isNew) {
+        bcrypt.genSalt(10, function (err, salt) {
+            if (err) {
+                return next(err);
+            }
+            bcrypt.hash(user.password, salt, null, function (err, hash) {
+                if (err) {
+                    return next(err);
+                }
+                user.password = hash;
+                next();
+            });
+        });
+    } else {
+        return next();
+    }
+});
 
-// configure to use email for username field
-User.plugin(passportLocalMongoose, { usernameField: 'email' });
+// Method to compare password for login
+UserSchema.methods.comparePassword = function (passw, cb) {
+  bcrypt.compare(passw, this.password, (err, isMatch) => {
+    if (err) { return cb(err); }
 
-module.exports = mongoose.model('User', User);
+    cb(null, isMatch);
+  });
+};
+
+module.exports = mongoose.model('users', UserSchema, 'users');

@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8 col-md-12 col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                Users List 
+            </div>
+            <div class="card-body table-responsive">
+              <table class="table">
+                <thead>
+                  <th>Name</th>
+                  <th>User name</th>
+                  <th>Email</th>
+                  <th></th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of categorie">
+                    <td class="user-name" (click)="selectUser(user)">{{ user.firstname + ' ' + user.lastname }}</td>
+                    <td class="user-username" (click)="selectUser(user)">{{ user.username }}</td>
+                    <td class="user-email" (click)="selectUser(user)">{{ user.email }}</td>
+                    <td class="action-delete"><button class="btn btn-sm btn-danger" (click)="deleteUser(user._id)"><i class="fa fa-trash"></i> Delete</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      </div>
+      <div class="col-lg-4 col-md-12 col-sm-12">
+          <div class="card">
+            <div class="card-header">
+                Add user
+            </div>
+            <div class="card-body">
+              <form (submit)="submitForm();">
+                <div class="form-group">
+                  <label for="firstname">Firstname</label>
+                  <input type="text" [(ngModel)]="selectedItem.firstname" class="form-control" id="firstname" name="firstname" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Lastname</label>
+                    <input type="text" [(ngModel)]="selectedItem.lastname" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
+                  </div>
+                <div *ngIf="this.addNew" class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text"  [(ngModel)]="selectedItem.username"  id="username" name="username" class="form-control" placeholder="User Name" >
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text"  [(ngModel)]="selectedItem.email"  id="email" name="email" class="form-control" placeholder="Email" >
+                  </div>
+                <div *ngIf="this.addNew" class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password"  [(ngModel)]="selectedItem.password"  id="password" name="password" class="form-control" >
+                  </div>
+                <div *ngIf="this.addNew" class="form-group">
+                    <label for="cpassword">Confirme password</label>
+                    <input type="password"  [(ngModel)]="selectedItem.cpassword"  id="cpassword" name="cpassword" class="form-control" >
+                  </div>
+                <div class="text-right">
+                    <button type="button" class="btn btn-sm btn-success" (click)="resetForm()"><i class="fa fa-repeat"></i> Rest</button>
+                    <button *ngIf="this.addNew" type="submit" class="btn btn-sm btn-primary"><i class="fa fa-save"></i> Add user</button>
+                  <button *ngIf="!this.addNew" type="submit" class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i> Edit user</button>
+                </div>
+              </form>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>

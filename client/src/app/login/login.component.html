@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-12"></div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="login-box">
+                    <a href="" class="logo-name text-lg text-center"><img src="assets/img/logo.png"></a>
+                    <p class="text-center m-t-md">Please login into your account.</p>
+                    <form class="m-t-md" [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)" novalidate autocomplete="off">
+                        <div class="form-group">
+                            <input type="text" id="inputUser" class="form-control" [formControl]="username" placeholder="Username" autofocus>
+                            <div class="text-danger" *ngIf="loginForm.get('username').dirty && loginForm.get('username').invalid">
+                                Please enter username
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="inputPassword" class="form-control" [formControl]="password" placeholder="Password">
+                            <div class="text-danger" *ngIf="loginForm.get('password').dirty && loginForm.get('password').invalid">
+                                Please enter password
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-block m-t-md" type="submit" [disabled]="loginForm.invalid" >Sign in</button>
+                        <p class="text-center m-t-xs text-sm">Do not have an account?</p>
+                        <a [routerLink]="['/register']" class="btn btn-primary btn-block m-t-md">Create an account</a>
+                    </form>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12"></div>
+    </div><!-- Row -->
+</div>

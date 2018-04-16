@@ -6,12 +6,12 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
-import { Post } from './post.model';
+import { IPost } from './post.model';
 
 @Injectable()
 export class PostService {
 
-  selectedPost : Post;
+  selectedPost : IPost;
   constructor(private http: Http) { }
   
   // Post list

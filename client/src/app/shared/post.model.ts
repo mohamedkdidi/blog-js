@@ -1,9 +1,9 @@
-import { Category } from "./category.model";
+import { ICategory } from "./category.model";
 
 // Post schema
-export class Post{
+export interface IPost{
     _id?: string;
     title: string;
-    category: Category;
+    category: ICategory;
     body: string;
 }

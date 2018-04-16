@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';  
 
 import { PostService } from '../shared/post.service';
-import { Post } from '../shared/post.model';
-import { Category } from '../shared/category.model';
+import { IPost } from '../shared/post.model';
+import { ICategory } from '../shared/category.model';
 
 @Component({
   selector: 'app-post',
@@ -14,7 +14,10 @@ import { Category } from '../shared/category.model';
 
 export class PostComponent implements OnInit {
 
-  posts: Post[];
+  addNew = true;
+
+  posts: IPost[];
+
   selectedItem = {
     title: '',
     category: {
@@ -24,7 +27,7 @@ export class PostComponent implements OnInit {
   };
 
   title: string;
-  category: Category;
+  category: ICategory;
   body: string;
   editorConfig: object = {
     "editable": true,
@@ -108,15 +111,31 @@ export class PostComponent implements OnInit {
     });
   }
 
-  selectPost(post: Post) {
+  selectPost(post: IPost) {
     this.selectedItem = Object.assign({}, post);;
+    this.addNew = false;
   }
 
-  editPost(post,id){
+  resetForm() {
+    this.selectedItem.title = '';
+    this.selectedItem.body = '';
+    this.addNew = true;
+  }
+
+  submitForm(){
+    if(this.addNew){
+      this.addPost()
+    }
+    else{
+      this.editPost()
+    }
+  }
+
+  editPost(){
     let _post = this.selectedItem;
     console.log(_post);
     this.postService.editPost(_post)
-    .subscribe(data =>{
+    .subscribe(post =>{
         post.title = _post.title;
         post.category = _post.category;
         post.body = _post.body;
@@ -132,4 +151,6 @@ export class PostComponent implements OnInit {
         });
     });
   }
+
+  
 }
