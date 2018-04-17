@@ -6,8 +6,9 @@ This application was built with Angular 5, Nodejs, Express, MongoDB and Bootstra
 
 http://139.99.99.56:4200
 
-login: demo
-password: 123456
+<b>login:</b> demo
+
+<b>password:</b> 123456
 
 
 # Requirements.
