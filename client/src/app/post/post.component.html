@@ -39,11 +39,11 @@
                   <th>Title</th>
                   <th>Category</th>
                   <th colspan="2">
-                      <input type="text" class="form-control" id="title" name="search" placeholder="Search" />
+                      <input type="text" class="form-control" [(ngModel)]="filterinput" id="title" name="search" placeholder="Search" />
                   </th>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let post of posts">
+                  <tr *ngFor="let post of posts | filter:filterinput">
                     <td class="post-title" (click)="selectPost(post)">{{ post.title }}</td>
                     <td class="post-category" (click)="selectPost(post)">{{ post.category }}</td>
                     <td class="post-body" (click)="selectPost(post)" [innerHTML]="post.body"></td>

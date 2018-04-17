@@ -20,7 +20,7 @@ export class AuthService {
         try {
             const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
             if (theUser) {
-                this.currentUser = theUser.user;
+                this.currentUser = theUser;
             }
         } catch (e) {
             return false;

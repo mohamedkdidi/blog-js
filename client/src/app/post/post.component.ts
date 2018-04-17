@@ -64,6 +64,7 @@ export class PostComponent implements OnInit {
   constructor(private postService: PostService, private toastr : ToastrService) { }
 
   ngOnInit() {
+    this.filterselect = '';
     this.postService.getPost().subscribe(posts =>{
       this.posts = posts;
     });
