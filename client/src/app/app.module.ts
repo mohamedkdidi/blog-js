@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DropdownModule } from 'angular-custom-dropdown';
 import { Ng2SearchPipeModule } from 'ng2-search-filter'
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
@@ -53,6 +54,7 @@ import { UserModule } from './shared/user.module';
     NgbModule.forRoot(), // bootstrap 
     DropdownModule,
     Ng2SearchPipeModule,
+    NgxPaginationModule,
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent},
       { path: 'post', component: PostComponent},

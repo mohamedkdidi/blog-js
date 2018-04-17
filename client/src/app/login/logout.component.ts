@@ -16,7 +16,13 @@ export class LogoutComponent implements OnInit {
 
     ngOnInit(){
         this.authService.logout();
-        this.toastr.success('You have been logged out.');
+        this.toastr.success('You have been logged out.', 'Blog JS', 
+            {
+            timeOut: 3000,
+            progressBar: true,
+            progressAnimation: 'increasing',
+            positionClass: 'toast-bottom-right',
+            });
         this.router.navigate(['login']);
     }
 

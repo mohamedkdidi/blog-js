@@ -43,7 +43,7 @@
                   </th>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let post of posts | filter:filterinput">
+                  <tr *ngFor="let post of posts | filter:filterinput | paginate: { itemsPerPage: 9, currentPage: p }">
                     <td class="post-title" (click)="selectPost(post)">{{ post.title }}</td>
                     <td class="post-category" (click)="selectPost(post)">{{ post.category }}</td>
                     <td class="post-body" (click)="selectPost(post)" [innerHTML]="post.body"></td>
@@ -51,6 +51,9 @@
                   </tr>
                 </tbody>
               </table>
+              <div class="text-center">
+                  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+              </div>
             </div>
           </div>
     </div>

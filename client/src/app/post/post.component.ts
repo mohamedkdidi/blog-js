@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';  
 
 import { PostService } from '../shared/post.service';
+import { CategoryService } from '../shared/category.service';  
 import { IPost } from '../shared/post.model';
 import { ICategory } from '../shared/category.model';
 
@@ -9,7 +10,7 @@ import { ICategory } from '../shared/category.model';
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css'],
-  providers: [PostService],
+  providers: [PostService, CategoryService],
 })
 
 export class PostComponent implements OnInit {
@@ -29,11 +30,13 @@ export class PostComponent implements OnInit {
   title: string;
   category: ICategory;
   body: string;
+  filterselect: string;
+
   editorConfig: object = {
     "editable": true,
     "spellcheck": true,
     "height": "auto",
-    "minHeight": "370px",
+    "minHeight": "150px",
     "width": "auto",
     "minWidth": "0",
     "translate": "yes",
@@ -51,20 +54,19 @@ export class PostComponent implements OnInit {
         ["code"]
       ]
   };
-  categories = [
-    {_id: 0, title: "Select category"},
-    {_id: 1, title: "Front-end"},
-    {_id: 2, title: "Back-end"},
-    {_id: 3, title: "UI/UX design"},
-    {_id: 4, title: "CI/DI"},
-    {_id: 5, title: "Software architect"},
-  ];
+  categories = [];
   selectedValue = null;
 
-  constructor(private postService: PostService, private toastr : ToastrService) { }
+  constructor(
+    private postService: PostService, 
+    private categoryService: CategoryService,
+    private toastr : ToastrService) { }
 
   ngOnInit() {
     this.filterselect = '';
+    this.categoryService.getCategory().subscribe(categories =>{
+      this.categories = categories;
+    });
     this.postService.getPost().subscribe(posts =>{
       this.posts = posts;
     });

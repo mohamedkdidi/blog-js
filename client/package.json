@@ -31,6 +31,7 @@
     "ng2-search-filter": "^0.4.7",
     "ngx-bootstrap": "^2.0.3",
     "ngx-editor": "^3.3.0-rc.13",
+    "ngx-pagination": "^3.1.0",
     "ngx-toastr": "^8.4.0",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
