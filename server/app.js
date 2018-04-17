@@ -46,7 +46,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // basic routes
 app.get('/', function(req, res) {
-	res.send('Expense Watch API is running at http://localhost:' + port + '/api');
+	res.send('App is running at http://localhost:' + port + '/api');
 });
 
 
