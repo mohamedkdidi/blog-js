@@ -2,6 +2,14 @@
 
 This application was built with Angular 5, Nodejs, Express, MongoDB and Bootstrap 4.1. 
 
+# Demo link
+
+http://139.99.99.56:4200
+
+login: demo
+password: 123456
+
+
 # Requirements.
 
 node and yarn
@@ -52,8 +60,6 @@ yarn install
 
 Run the Angular 5 project with Angular CLI commande `ng serve`. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-
-<img align="center" src="./screenshot.png">
 
 ## Build
 
