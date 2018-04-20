@@ -2,6 +2,16 @@
 
 This application was built with Angular 5, Nodejs, Express, MongoDB and Bootstrap 4.1. 
 
+* JWT Authentication.
+* NodeJs API framework Express Js.
+* MongoDB database, Mongoose ORM.
+* Angular 5 client.
+* Post management.
+* Category management.
+* User management.
+* User login.
+* User register.
+
 # Demo link
 
 http://139.99.99.56:4200
@@ -81,5 +91,5 @@ GNU v3 [Mohamed Kdidi](https://mohamedkdidi.github.io)
 
 
 ## Send Thanks
-Bitcoin greatfully accepted: `37btVdM6R4yJFCaiKLS4HuXevR6K1ZX2tv`
+<b>Bitcoin greatfully accepted</b>: `37btVdM6R4yJFCaiKLS4HuXevR6K1ZX2tv`
 
